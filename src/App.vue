@@ -1,7 +1,12 @@
 <template>
-  <RouterView />
+  <div id="app">
+    <Menu> </Menu>
+    <RouterView />
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Menu from "./components/layout/menu/Menu.vue";
+</script>
 
 <style scoped></style>
