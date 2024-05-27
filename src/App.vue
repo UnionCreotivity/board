@@ -1,8 +1,6 @@
 <template>
-  <div id="app">
-    <Menu> </Menu>
-    <RouterView />
-  </div>
+  <Menu> </Menu>
+  <RouterView />
 </template>
 
 <script setup lang="ts">

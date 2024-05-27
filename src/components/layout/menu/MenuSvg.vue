@@ -2,7 +2,7 @@
   <div
     class="menu-container"
     :class="props.dir"
-    :style="trans"
+    :style="[trans, toggleStyle]"
     @mousemove="getMousePos"
   >
     <div class="menu-inner" @click="toggleValue">
@@ -33,6 +33,8 @@ const cssLocalVar = ref(props.cssVar);
 
 const mousePos = ref({ x: 0, y: 0 });
 
+const toggleStyle = ref({ right: "" });
+
 const getMousePos = (val: MouseEvent) => {
   mousePos.value.y = val.clientY;
 };
@@ -44,6 +46,19 @@ const trans = computed(() => {
 const toggleValue = () => {
   emits("toggle-menu", !props.toggle);
 };
+
+watch(
+  () => props.toggle,
+  (oldValue, newValue) => {
+    if (props.dir === "right-menu") {
+      if (newValue === true) {
+        toggleStyle.value.right = "0vw";
+      } else {
+        toggleStyle.value.right = "-3vw";
+      }
+    }
+  }
+);
 </script>
 
 <style scoped>
