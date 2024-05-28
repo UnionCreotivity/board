@@ -3,6 +3,7 @@
     <div
       class="imgBox"
       ref="imgBox"
+      :style="imgBoxStyle"
       @click.stop
       @mousedown="onMouseDown"
       @mousemove="onMouseMove"
@@ -61,21 +62,17 @@ const imgBox = ref<HTMLElement | null>(null);
 const zoomIn = (e: MouseEvent) => {
   e.stopPropagation();
   e.preventDefault();
-  requestAnimationFrame(() => {
-    scaleRatio.value = props.maxRatio;
-    x.value = props.init.x;
-    y.value = props.init.y;
-  });
-  console.log(e);
+  if (scaleRatio.value < props.maxRatio) {
+    scaleRatio.value = Math.min(scaleRatio.value + 0.1, props.maxRatio);
+  }
 };
 
 const zoomOut = (e: MouseEvent) => {
   e.stopPropagation();
   e.preventDefault();
-  scaleRatio.value = 1;
-  x.value = 0;
-  y.value = 0;
-  console.log(2);
+  if (scaleRatio.value > 1) {
+    scaleRatio.value = Math.max(scaleRatio.value - 0.1, 1);
+  }
 };
 
 const onMouseMove = (e: MouseEvent) => {
@@ -169,11 +166,12 @@ const onTouchEnd = () => {
   flag.value = false;
 };
 
-const imgBoxStyle = computed(() => ({
-  position: "relative",
-  overflow: "hidden",
-  pointerEvents: scaleRatio.value === 1 ? "none" : "auto",
-}));
+const imgBoxStyle = computed(() => {
+  return {
+    transform: `scale(${scaleRatio.value})`,
+    transformOrigin: "top left",
+  };
+});
 
 const boxStyle = computed(() => ({
   position: "relative",
