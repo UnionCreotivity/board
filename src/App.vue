@@ -1,5 +1,5 @@
 <template>
-  <Menu> </Menu>
+  <!-- <Menu> </Menu> -->
   <RouterView />
 </template>
 

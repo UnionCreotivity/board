@@ -1,0 +1,132 @@
+.floor-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: #dbdbdb;
+  position: relative;
+  font-family: "Noto Serif TC", serif;
+  overflow: hidden;
+  .left-box {
+    flex: 1 1 18%;
+    border: 1px solid red;
+    .left-floor-nav {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      font-size: 1.2vw;
+      color: #1a1a1a;
+      font-weight: 700;
+      left: 5vw;
+      bottom: 3vw;
+      width: 6%;
+
+      .arrow-box {
+        width: 1.7vw;
+        margin-bottom: 2vw;
+        align-self: center;
+
+        img {
+          width: 100%;
+        }
+      }
+      .next-arrow-box {
+        margin-top: 0.5vw;
+      }
+
+      ul {
+        list-style-type: none;
+        li {
+          text-align: center;
+          margin-bottom: 1.5vw;
+          line-height: 2;
+          cursor: pointer;
+        }
+
+        .selected {
+          background-color: rgba(48, 102, 119, 0.3);
+        }
+      }
+    }
+  }
+
+  .floor-content-box {
+    flex: 1 1 75%;
+    position: relative;
+    .title-box {
+      display: flex;
+      //   position: absolute;
+      //   right: 4%;
+      //   top: 3%;
+      justify-content: right;
+      align-items: center;
+      padding-right: 5vw;
+      padding-top: 2vw;
+      .floor-text {
+        font-size: 5.5vw;
+        line-height: 1;
+        font-family: "Cormorant Infant";
+        font-weight: 400;
+        color: #306677;
+      }
+
+      .title-right {
+        margin-left: 1.5vw;
+        .title-zh {
+          font-size: 1.4vw;
+          letter-spacing: 0.1em;
+          color: #306677;
+        }
+
+        .title-en {
+          font-size: 2.5vw;
+          line-height: 1;
+          font-family: "Cormorant Garamond";
+          font-weight: 400;
+          letter-spacing: 0.05em;
+          color: #306677;
+        }
+      }
+    }
+
+    .img-box {
+      width: 80%;
+      img {
+        width: 100%;
+      }
+    }
+
+    .scale-drag-box {
+      position: absolute;
+      bottom: 10vw;
+      right: 3vw;
+      z-index: 10;
+
+      .add {
+        width: 3vw;
+        margin-bottom: 1vw;
+        img {
+          width: 100%;
+        }
+      }
+
+      .minus {
+        width: 3vw;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .floor-plan-img {
+    .container {
+      position: relative;
+      .anchor-area {
+        width: 80%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
