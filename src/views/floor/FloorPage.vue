@@ -19,6 +19,7 @@
 import "@/assets/scss/floor/floor.scss";
 import FloorNav from "@/components/floor/FloorNav.vue";
 import FloorContent from "@/components/floor/FloorContent.vue";
+import ScaleDrag from "@/components/floor/ScaleDrag.vue";
 </script>
 
 <style lang="scss" scoped></style>

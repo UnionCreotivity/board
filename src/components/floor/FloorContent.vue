@@ -22,7 +22,6 @@
 import { onMounted, reactive } from "vue";
 import "@/assets/scss/floor/floor.scss";
 import FloorContent from "@/components/floor/FloorContent.vue";
-import ScaleDrag from "@/components/ScaleDrag.vue";
 </script>
 
 <style lang="scss" scoped></style>
