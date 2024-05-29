@@ -9,7 +9,6 @@ const slideStore = useSlideStore();
 
 onMounted(() => {
   slideStore.storeSlideIndex(5);
-  console.log(slideStore.slideState);
 });
 </script>
 

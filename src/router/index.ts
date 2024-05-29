@@ -6,6 +6,7 @@ import LandmarkPage from "@/views/landmark/LandmarkPage.vue";
 import MidtownPage from "@/views/midtown/MidtownPage.vue";
 import NewsPage from "@/views/news/NewsPage.vue";
 import DesignPage from "@/views/design/DesignPage.vue";
+import FloorPage from "@/views/floor/FloorPage.vue";
 import LifeFunctionPage from "@/views/lifefunction/LifeFunctionPage.vue";
 
 const router = createRouter({
@@ -38,6 +39,10 @@ const router = createRouter({
     {
       path: "/design",
       component: DesignPage,
+    },
+    {
+      path: "/floor",
+      component: FloorPage,
     },
   ],
 });

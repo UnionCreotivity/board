@@ -9,6 +9,8 @@ declare module 'vue' {
   export interface GlobalComponents {
     FifthCut: typeof import('./src/components/home/FifthCut.vue')['default']
     FirstCut: typeof import('./src/components/home/FirstCut.vue')['default']
+    FloorContent: typeof import('./src/components/floor/FloorContent.vue')['default']
+    FloorNav: typeof import('./src/components/floor/FloorNav.vue')['default']
     FourthCUt: typeof import('./src/components/home/FourthCUt.vue')['default']
     Menu: typeof import('./src/components/layout/menu/Menu.vue')['default']
     MenuContent: typeof import('./src/components/layout/menu/MenuContent.vue')['default']
@@ -17,6 +19,7 @@ declare module 'vue' {
     MoveBack: typeof import('./src/components/layout/moveback/MoveBack.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ScaleDrag: typeof import('./src/components/floor/ScaleDrag.vue')['default']
     SecondCut: typeof import('./src/components/home/secondCut/SecondCut.vue')['default']
     SecondCutTop: typeof import('./src/components/home/secondCut/SecondCutTop.vue')['default']
     SecondThumbs: typeof import('./src/components/home/secondCut/SecondThumbs.vue')['default']
