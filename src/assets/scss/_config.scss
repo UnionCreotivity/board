@@ -1,0 +1,10 @@
+@mixin tablet() {
+  @media all and (max-width: 1024px) {
+    @content;
+  }
+}
+
+img,
+canvas {
+  width: 100%;
+}

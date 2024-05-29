@@ -7,7 +7,8 @@
     :direction="'vertical'"
     :mousewheel="true"
     :modules="[Mousewheel]"
-    @slide-change="onSlideChange"
+    @swiper="onSwiper"
+    @active-index-change="onSlideChange"
   >
     <swiper-slide><FirstCut /></swiper-slide>
     <swiper-slide><SecondCut /></swiper-slide>
@@ -22,17 +23,33 @@
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Mousewheel } from "swiper/modules";
 import "swiper/css/bundle";
+import { useSlideStore } from "@/stores/slideState";
 import FirstCut from "@/components/home/FirstCut.vue";
-import SecondCut from "@/components/home/SecondCut.vue";
+import SecondCut from "@/components/home/secondCut/SecondCut.vue";
 import ThirdCut from "@/components/home/ThirdCut.vue";
 import FourthCUt from "@/components/home/FourthCUt.vue";
 import FifthCut from "@/components/home/FifthCut.vue";
 import SixthCut from "@/components/home/SixthCut.vue";
 import "@/assets/scss/home/home.scss";
 
-const onSlideChange = () => {
-  console.log("change");
+const slideStore = useSlideStore();
+
+const swiperInstance = ref();
+
+const onSlideChange = (val: any) => {
+  slideStore.storeSlideIndex(val.activeIndex);
 };
+
+const onSwiper = (swiper: any) => {
+  swiperInstance.value = swiper;
+};
+function goToSlide(position: number) {
+  swiperInstance.value.slideTo(position, 0);
+}
+onMounted(() => {
+  console.log(slideStore.slideState);
+  goToSlide(slideStore.slideState);
+});
 </script>
 
 <style lang="scss" scoped></style>
