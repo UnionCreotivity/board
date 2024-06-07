@@ -8,6 +8,7 @@ import NewsPage from "@/views/news/NewsPage.vue";
 import DesignPage from "@/views/design/DesignPage.vue";
 import FloorPage from "@/views/floor/FloorPage.vue";
 import LifeFunctionPage from "@/views/lifefunction/LifeFunctionPage.vue";
+import CalculatorPage from "@/views/calculator/CalculatorPage.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -43,6 +44,10 @@ const router = createRouter({
     {
       path: "/floor",
       component: FloorPage,
+    },
+    {
+      path: "/calc",
+      component: CalculatorPage,
     },
   ],
 });

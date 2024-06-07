@@ -65,7 +65,7 @@ const zoomIn = (e: MouseEvent) => {
   e.stopPropagation();
   e.preventDefault();
   if (scaleRatio.value < props.maxRatio) {
-    scaleRatio.value += 0.3;
+    scaleRatio.value += 0.5;
     // scaleRatio.value = Math.min(scaleRatio.value + 0.1, props.maxRatio);
   }
 };
@@ -74,7 +74,7 @@ const zoomOut = (e: MouseEvent) => {
   e.stopPropagation();
   e.preventDefault();
   if (scaleRatio.value > 1) {
-    scaleRatio.value -= 0.3;
+    scaleRatio.value -= 0.5;
   }
   if (scaleRatio.value < 1.5) {
     x.value = 0;
@@ -85,7 +85,7 @@ const zoomOut = (e: MouseEvent) => {
 const onMouseMove = (e: MouseEvent) => {
   const maxHorizontal = (mapRect.width - boxRect.width) / 2;
   const maxVertical = (mapRect.height - boxRect.height) / 2;
-  if (flag.value && scaleRatio.value >= 1.3) {
+  if (flag.value && scaleRatio.value >= 1.5) {
     requestAnimationFrame(() => {
       if (Math.abs(deltaXY.x) > Math.abs(deltaXY.y)) {
         if (deltaXY.x > 0 && x.value <= maxHorizontal) {
@@ -143,7 +143,7 @@ const onTouchMove = (e: TouchEvent) => {
   const maxHorizontal = (mapRect.width - boxRect.width) / 2;
   const maxVertical = (mapRect.height - boxRect.height) / 2;
 
-  if (flag.value && scaleRatio.value >= 1.3) {
+  if (flag.value && scaleRatio.value >= 1.5) {
     requestAnimationFrame(() => {
       if (Math.abs(deltaXY.x) > Math.abs(deltaXY.y)) {
         if (deltaXY.x > 0 && x.value <= maxHorizontal) {
@@ -182,7 +182,7 @@ const imgBoxStyle = computed(() => {
 const boxStyle = computed(() => ({
   position: "relative" as const,
   width: "100%",
-  height: "100%",
+  height: "37vw",
   transform: `scale(${scaleRatio.value})`,
   left: `${x.value}px`,
   top: `${y.value}px`,
@@ -201,7 +201,7 @@ watch(scaleRatio, () => {
   scaleRatio.value = Number(scaleRatio.value);
   if (scaleRatio.value >= 2) {
     scaleRatio.value = 2;
-  } else if (scaleRatio.value < 1.3) {
+  } else if (scaleRatio.value < 1.5) {
     x.value = 0;
     y.value = 0;
   } else if (scaleRatio.value <= 1) {

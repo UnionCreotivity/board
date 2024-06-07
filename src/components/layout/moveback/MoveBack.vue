@@ -11,11 +11,20 @@ const route = useRoute();
 
 const router = useRouter();
 
+//選定特定路徑
+const innerPage = ["/floor"];
+
 const moveBackClick = () => {
-  router.push("/");
+  //符合就回上一頁 不符合就回首頁
+  if (innerPage.includes(route.path)) {
+    router.go(-1);
+  } else {
+    router.push("/");
+  }
 };
 
 watchEffect(() => {
+  //在首頁就不會有點擊事件
   let path = route.path;
   if (path === "/") {
     event.value.pointerEvents = "none";

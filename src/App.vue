@@ -1,31 +1,15 @@
 <template>
-  <!-- <MoveBack /> -->
+  <MoveBack />
   <Menu />
   <router-view v-slot="{ Component, route }">
-    <Transition name="fade" mode="out-in">
-      <component :is="Component" :key="route.path"
-    /></Transition>
+    <FadeIn> <component :is="Component" :key="route.path" /></FadeIn>
   </router-view>
 </template>
 
 <script setup lang="ts">
+import FadeIn from "@/components/transition/FadeIn.vue";
 import MoveBack from "./components/layout/moveback/MoveBack.vue";
 import Menu from "./components/layout/menu/Menu.vue";
 </script>
 
-<style scoped>
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-
-.fade-enter-to,
-.fade-leave-from {
-  opacity: 1;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.75s;
-}
-</style>
+<style scoped></style>

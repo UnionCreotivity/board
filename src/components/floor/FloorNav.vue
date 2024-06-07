@@ -1,7 +1,7 @@
 <template>
   <div class="left-box">
     <div class="left-floor-nav">
-      <div class="prev-arrow-box arrow-box">
+      <div class="prev-arrow-box arrow-box" @click="move(-1)">
         <img
           src="../../assets/img/floor/choose/000-arrow-top.svg"
           alt=""
@@ -12,14 +12,14 @@
       <ul>
         <li
           v-for="(item, index) in state.data"
-          :key="index"
-          @click="selectFloor(index)"
-          :class="{ selected: selectedIndex === index }"
+          :key="item.floor"
+          :class="{ selected: selectedIndex === item.floor }"
+          @click="selectFloor(item.floor)"
         >
           {{ item.floor }}
         </li>
       </ul>
-      <div class="next-arrow-box arrow-box">
+      <div class="next-arrow-box arrow-box" @click="move(1)">
         <img
           src="../../assets/img/floor/choose/001-arrow-bottom.svg"
           alt=""
@@ -35,25 +35,48 @@
 import "@/assets/scss/floor/floor.scss";
 interface FloorItem {
   floor: string;
+  id: number;
 }
+
+const emits = defineEmits(["select-floor", "move"]);
+
+const props = defineProps(["floor"]);
 
 const state = reactive({
   data: [
-    { floor: "RF" },
-    { floor: "3F" },
-    { floor: "2F" },
-    { floor: "1F" },
-    { floor: "B1" },
-    { floor: "B2" },
-    { floor: "B3" },
+    { floor: "RF", id: 4 },
+    { floor: "3F", id: 5 },
+    { floor: "2F", id: 6 },
+    { floor: "1F", id: 0 },
+    { floor: "B1", id: 1 },
+    { floor: "B2", id: 2 },
+    { floor: "B3", id: 3 },
   ] as FloorItem[],
 });
 
-const selectedIndex = ref<number | null>(null);
+const pos = ref(0);
 
-const selectFloor = (index: number) => {
+const floorLength = state.data.length;
+const selectedIndex = ref<string | null>("1F");
+
+const selectFloor = (index: string) => {
   selectedIndex.value = index;
+  emits("select-floor", index);
 };
+
+const move = (step: number) => {
+  pos.value = (pos.value + step + floorLength) % floorLength;
+  emits("move", pos.value);
+};
+
+watch(
+  () => props.floor,
+  (newValue) => {
+    selectedIndex.value = newValue;
+    const findId = state.data.filter((item) => item.floor === props.floor);
+    pos.value = findId[0].id;
+  }
+);
 </script>
 
 <style lang="scss" scoped></style>

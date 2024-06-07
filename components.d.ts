@@ -7,10 +7,18 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Calculator: typeof import('./src/components/calculator/Calculator.vue')['default']
+    CalculatorForm: typeof import('./src/components/calculator/CalculatorForm.vue')['default']
+    CalculatorResult: typeof import('./src/components/calculator/CalculatorResult.vue')['default']
+    FadeIn: typeof import('./src/components/transition/FadeIn.vue')['default']
+    FadeInItem: typeof import('./src/components/transition/FadeInItem.vue')['default']
     FifthCut: typeof import('./src/components/home/FifthCut.vue')['default']
     FirstCut: typeof import('./src/components/home/FirstCut.vue')['default']
     FloorContent: typeof import('./src/components/floor/FloorContent.vue')['default']
+    FloorFancyBox: typeof import('./src/components/fancybox/FloorFancyBox.vue')['default']
     FloorNav: typeof import('./src/components/floor/FloorNav.vue')['default']
+    FloorPoints: typeof import('./src/components/floor/FloorPoints.vue')['default']
+    FloorSVG: typeof import('./src/components/floor/FloorSVG.vue')['default']
     FourthCUt: typeof import('./src/components/home/FourthCUt.vue')['default']
     Menu: typeof import('./src/components/layout/menu/Menu.vue')['default']
     MenuContent: typeof import('./src/components/layout/menu/MenuContent.vue')['default']

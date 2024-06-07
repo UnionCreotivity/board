@@ -1,9 +1,12 @@
 <template>
-  <div class="test-page">換頁測試用(news)</div>
+  <div class="test-page">
+    <Calculator></Calculator>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { useSlideStore } from "@/stores/slideState";
+import Calculator from "@/components/calculator/CalculatorForm.vue";
 
 const slideStore = useSlideStore();
 

@@ -2,14 +2,14 @@
   <article class="home-cut home-cut-2">
     <div class="home-cut-2-container">
       <div class="home-cut-2-top">
-        <TransitionGroup name="cut2Fade">
+        <FadeInItem>
           <SecondCutTop
             v-for="item in contentImage"
             :key="nanoid()"
             :imgSrc="item.src"
             :name="item.name"
             :currentTag="currentTag"
-        /></TransitionGroup>
+        /></FadeInItem>
       </div>
       <div class="home-cut-2-bottom-thumb">
         <img
@@ -27,6 +27,7 @@
 
 <script setup lang="ts">
 import { nanoid } from "nanoid";
+import FadeInItem from "@/components/transition/FadeInItem.vue";
 import SecondCutTop from "./SecondCutTop.vue";
 
 const currentTag = ref("thumb1");
@@ -86,24 +87,4 @@ watch(
 );
 </script>
 
-<style lang="scss" scoped>
-.cut2Fade-enter-from,
-.cut2Fade-leave-to {
-  opacity: 0;
-  transform: translateX(2vw);
-}
-
-.cut2Fade-enter-to,
-.cut2Fade-leave-from {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.cut2Fade-enter-active {
-  transition: all 0.75s;
-  transition-delay: 0.4s;
-}
-.cut2Fade-leave-active {
-  transition: all 0.75s;
-}
-</style>
+<style lang="scss"></style>
