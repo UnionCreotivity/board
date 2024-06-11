@@ -18,6 +18,9 @@
   }
   .left-box {
     flex: 1 1 0%;
+    height: 100%;
+    display: flex;
+    align-items: center;
     pointer-events: auto;
     .left-floor-nav {
       display: flex;
@@ -132,6 +135,9 @@
 
   .floor-plan-img {
     flex: 1 1 80%;
+    display: flex;
+    align-items: center;
+    height: 80vh;
     .box {
       pointer-events: auto;
     }
@@ -139,6 +145,10 @@
       position: absolute;
       display: flex;
       justify-content: center;
+      top: 0;
+      left: 0;
+      height: 100%;
+      align-items: center;
       .anchor-area {
         position: relative;
         width: 80%;
@@ -148,21 +158,17 @@
         }
       }
     }
-    @include tablet {
+    > .imgBox {
+      width: 94%;
+      height: 100%;
       display: flex;
-      height: 80vh;
-      > .imgBox {
-        width: 94%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .zoom {
-        right: 5%;
-        bottom: 20%;
-        position: absolute;
-        flex-direction: column-reverse;
-      }
+      justify-content: center;
+    }
+    .zoom {
+      right: 5%;
+      bottom: 20%;
+      position: absolute;
+      flex-direction: column-reverse;
     }
   }
 

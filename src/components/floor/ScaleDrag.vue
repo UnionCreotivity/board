@@ -138,12 +138,15 @@ const onTouchStart = (e: TouchEvent) => {
   mapRect.height = dragTarget.value?.getBoundingClientRect().height ?? 0;
   boxRect.width = imgBox.value?.getBoundingClientRect().width ?? 0;
   boxRect.height = imgBox.value?.getBoundingClientRect().height ?? 0;
+  console.log("start");
+  console.log(mapRect.width);
 };
 
 const onTouchMove = (e: TouchEvent) => {
   const maxHorizontal = (mapRect.width - boxRect.width) / 2;
   const maxVertical = (mapRect.height - boxRect.height) / 2;
-
+  console.log("move");
+  console.log(mapRect.width);
   if (flag.value && scaleRatio.value >= 3) {
     requestAnimationFrame(() => {
       if (Math.abs(deltaXY.x) > Math.abs(deltaXY.y)) {
@@ -183,7 +186,7 @@ const imgBoxStyle = computed(() => {
 const boxStyle = computed(() => ({
   position: "relative" as const,
   width: "100%",
-  height: "37vw",
+  height: "100%",
   transform: `scale(${scaleRatio.value})`,
   left: `${x.value}px`,
   top: `${y.value}px`,
