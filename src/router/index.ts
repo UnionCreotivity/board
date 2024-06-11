@@ -1,4 +1,8 @@
-import { createRouter, createWebHistory } from "vue-router";
+import {
+  createRouter,
+  createWebHistory,
+  createWebHashHistory,
+} from "vue-router";
 
 import HomePage from "@/views/home/HomePage.vue";
 import TopPage from "@/views/Top/TopPage.vue";
@@ -11,7 +15,7 @@ import LifeFunctionPage from "@/views/lifefunction/LifeFunctionPage.vue";
 import CalculatorPage from "@/views/calculator/CalculatorPage.vue";
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: [
     {
       path: "/",
