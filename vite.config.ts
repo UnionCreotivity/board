@@ -1,4 +1,5 @@
 import { fileURLToPath, URL } from "url";
+import { resolve } from "path";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import VueDevTools from "vite-plugin-vue-devtools";
@@ -8,14 +9,12 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/",
+  build: {
+    outDir: "dist",
+  },
   plugins: [
-    vue({
-      template: {
-        compilerOptions: {
-          // isCustomElement: (tag) => tag.startsWith("swiper-"),
-        },
-      },
-    }),
+    vue(),
     AutoImport({
       imports: ["vue", "vue-router", "pinia", { gsap: ["gsap"] }],
       dts: "src/types/auto-imports.d.ts",

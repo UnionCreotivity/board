@@ -7,7 +7,6 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    Calculator: typeof import('./src/components/calculator/Calculator.vue')['default']
     CalculatorForm: typeof import('./src/components/calculator/CalculatorForm.vue')['default']
     CalculatorResult: typeof import('./src/components/calculator/CalculatorResult.vue')['default']
     FadeIn: typeof import('./src/components/transition/FadeIn.vue')['default']
@@ -30,7 +29,6 @@ declare module 'vue' {
     ScaleDrag: typeof import('./src/components/floor/ScaleDrag.vue')['default']
     SecondCut: typeof import('./src/components/home/secondCut/SecondCut.vue')['default']
     SecondCutTop: typeof import('./src/components/home/secondCut/SecondCutTop.vue')['default']
-    SecondThumbs: typeof import('./src/components/home/secondCut/SecondThumbs.vue')['default']
     SixthCut: typeof import('./src/components/home/SixthCut.vue')['default']
     ThirdCut: typeof import('./src/components/home/ThirdCut.vue')['default']
   }

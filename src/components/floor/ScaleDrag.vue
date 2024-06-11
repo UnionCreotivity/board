@@ -185,13 +185,6 @@ const boxStyle = computed(() => ({
   touchAction: "none",
 }));
 
-const zoomImgStyle = {
-  width: "3vw",
-  margin: "0.25vw 0",
-  cursor: "pointer",
-  pointerEvents: "auto",
-};
-
 watch(scaleRatio, () => {
   scaleRatio.value = Number(scaleRatio.value);
   if (scaleRatio.value >= 2) {
