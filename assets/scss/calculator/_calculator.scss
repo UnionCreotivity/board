@@ -1,0 +1,106 @@
+#calculator {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 21;
+  .cal-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+  }
+  .cal-form-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .cal-title {
+    text-align: center;
+  }
+  .cal-form-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 1vw;
+    label {
+      width: 100%;
+      font-size: 0.9vw;
+    }
+    input {
+      width: 10vw;
+      background-color: #f2f2f2;
+      border: none;
+      margin-right: 0.5vw;
+      padding-left: 0.5vw;
+      font-size: 1.1vw;
+    }
+  }
+  .cal-form-button {
+    display: flex;
+    align-items: center;
+    margin-top: 2vw;
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 7.5vw;
+      height: 2.5vw;
+      font-size: 0.9vw;
+      border: 1px solid #c2a357;
+      cursor: pointer;
+      margin-right: 1vw;
+    }
+  }
+  .cal-result-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+    width: 90%;
+  }
+  .cal-result-left,
+  .cal-result-right {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 20%;
+  }
+  .cal-result-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1vw;
+    margin-top: 1vw;
+    width: 100%;
+    > p:nth-child(1) {
+      width: 28%;
+      white-space: nowrap;
+    }
+    > p:nth-child(2) {
+      text-align: center;
+      width: 9vw;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 1px;
+        width: 100%;
+        background-color: black;
+      }
+    }
+  }
+  .cal-result-item-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

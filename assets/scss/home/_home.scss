@@ -1,0 +1,129 @@
+#home {
+  height: 100vh;
+
+  .home-cut {
+    width: 100vw;
+    height: 100vh;
+    transition: 1.25s;
+  }
+
+  .home-cut-1-container {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .home-cut-2 {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+  }
+
+  .home-cut-3 {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(14, 31, 63);
+  }
+  .home-cut-4 {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(8, 48, 6);
+  }
+  .home-cut-5 {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(36, 4, 31);
+  }
+  .home-cut-6 {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(45, 46, 6);
+  }
+
+  //輪播斜走動畫設定
+  .swiper-slide-prev {
+    .home-cut-1,
+    .home-cut-5 {
+      transform: translate(-100%, -100%);
+    }
+    .home-cut-2,
+    .home-cut-4 {
+      transform: translate(0, -100%);
+    }
+    .home-cut-3 {
+      transform: translate(100%, -100%);
+    }
+  }
+  .swiper-slide-active {
+    .home-cut-2,
+    .home-cut-3,
+    .home-cut-4,
+    .home-cut-5 {
+      transform: translate(0, 0);
+    }
+  }
+  .swiper-slide-next {
+    .home-cut-2 {
+      transform: translate(100%, 100%);
+    }
+    .home-cut-3,
+    .home-cut-5 {
+      transform: translate(0%, 100%);
+    }
+    .home-cut-4 {
+      transform: translate(-100%, 100%);
+    }
+    .home-cut-6 {
+      transform: translate(100%, 100%);
+    }
+  }
+  .home-cut-2-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 60vw;
+    margin: auto;
+  }
+  .home-cut-2-top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30vw;
+    height: 25vw;
+  }
+  .home-cut-2-top-img {
+    position: absolute;
+    height: 20vw;
+    img {
+      height: 100%;
+    }
+  }
+  .home-cut-2-bottom-thumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 5vw;
+      height: 5vw;
+      border-radius: 50%;
+      margin: 0 1vw;
+    }
+  }
+  .thumb-active {
+    opacity: 1;
+
+    cursor: unset;
+  }
+  .thumb-inactive {
+    opacity: 0.5;
+
+    cursor: pointer;
+  }
+}

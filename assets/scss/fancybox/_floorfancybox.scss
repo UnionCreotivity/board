@@ -1,0 +1,146 @@
+#floor-fancybox {
+  position: fixed;
+  z-index: 23;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  background-color: #dbdbdb;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+  .floor-fancybox-main-img {
+    width: 100%;
+    height: 100%;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .floor-fancybox-close-button {
+    position: absolute;
+    right: 10%;
+    top: 4%;
+    width: 75px;
+    height: 75px;
+    z-index: 10;
+    background-color: rgba(48, 99, 116, 0.5);
+    cursor: pointer;
+    .floor-fancybox-close-line-1 {
+      position: absolute;
+      background-color: rgb(255, 255, 255);
+      width: 80%;
+      height: 2px;
+      inset: 0px;
+      margin: auto;
+      transform: rotate(45deg);
+    }
+    .floor-fancybox-close-line-2 {
+      position: absolute;
+      background-color: rgb(255, 255, 255);
+      width: 80%;
+      height: 2px;
+      inset: 0px;
+      margin: auto;
+      transform: rotate(-45deg);
+    }
+  }
+  .floor-fancybox-name {
+    position: absolute;
+    right: 0;
+    bottom: 2vw;
+    width: 18vw;
+    padding: 1vw 0;
+    background-color: rgba(0, 0, 0, 0.6862745098);
+    border-radius: 10px 0 0 10px;
+    p {
+      width: 100%;
+      text-align: center;
+      font-size: 0.9vw;
+      color: #fff;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  .floor-fancybox-right {
+    width: 65%;
+    height: 51vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+  .floor-fancybox-left {
+    width: 16%;
+    position: relative;
+  }
+  .floor-fancybox-titlebox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 5vw;
+    border: 1px solid #306677;
+    padding: 3vw 2vw;
+    h2 {
+      font-size: 3.75vw;
+      margin-bottom: 0.6vw;
+      color: #306677;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      line-height: 1;
+    }
+    h4 {
+      font-size: 1.8vw;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+      color: #306677;
+    }
+    .s_line {
+      width: 25%;
+      height: 1px;
+      background-color: #306677;
+      margin-top: 1.5vw;
+    }
+  }
+
+  //SVG
+  #floor_Standard {
+    .cls-1,
+    .cls-2,
+    .cls-3 {
+      fill: none;
+      stroke: #306374;
+      stroke-width: 7px;
+      stroke-miterlimit: 10;
+      user-select: none;
+    }
+
+    .cls-4 {
+      font-size: 147.67px;
+    }
+
+    .svg-text-default-color {
+      fill: #306374;
+    }
+    .svg-text-choose-color {
+      fill: #fff;
+    }
+
+    .svg-rect-default-color {
+      fill: #fff;
+    }
+    .svg-rect-choose-color {
+      fill: #306374;
+    }
+    text {
+      user-select: none;
+    }
+  }
+}

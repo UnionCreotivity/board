@@ -1,0 +1,269 @@
+.floor-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: #dbdbdb;
+  position: relative;
+  flex-direction: column;
+  font-family: "Noto Serif TC", serif;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 21;
+  .floor-main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .left-box {
+    flex: 1 1 0%;
+    pointer-events: auto;
+    .left-floor-nav {
+      display: flex;
+      flex-direction: column;
+      font-size: 1.2vw;
+      color: #1a1a1a;
+      font-weight: 700;
+      width: 100%;
+
+      .arrow-box {
+        width: 1.7vw;
+        margin-bottom: 2vw;
+        align-self: center;
+        cursor: pointer;
+
+        img {
+          width: 100%;
+        }
+      }
+      .next-arrow-box {
+        margin-top: 0.5vw;
+      }
+
+      ul {
+        list-style-type: none;
+        li {
+          text-align: center;
+          margin-bottom: 1.5vw;
+          line-height: 2;
+          cursor: pointer;
+        }
+        transition: all 0.5s;
+        .selected {
+          background-color: rgba(48, 102, 119, 0.3);
+          transition: all 0.5s;
+        }
+      }
+    }
+  }
+
+  .floor-content-box {
+    // flex: 1 1 75%;
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    .title-box {
+      display: flex;
+      //   position: absolute;
+      //   right: 4%;
+      //   top: 3%;
+      justify-content: right;
+      align-items: center;
+      padding-right: 5vw;
+      padding-top: 2vw;
+      .floor-text {
+        font-size: 5.5vw;
+        line-height: 1;
+        font-family: "Cormorant Infant";
+        font-weight: 400;
+        color: #306677;
+      }
+
+      .title-right {
+        margin-left: 1.5vw;
+        .title-zh {
+          font-size: 1.4vw;
+          letter-spacing: 0.1em;
+          color: #306677;
+        }
+
+        .title-en {
+          font-size: 2.5vw;
+          line-height: 1;
+          font-family: "Cormorant Garamond";
+          font-weight: 400;
+          letter-spacing: 0.05em;
+          color: #306677;
+        }
+      }
+    }
+
+    .img-box {
+      width: 80%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .scale-drag-box {
+      position: absolute;
+      bottom: 10vw;
+      right: 3vw;
+      z-index: 10;
+
+      .add {
+        width: 3vw;
+        margin-bottom: 1vw;
+        img {
+          width: 100%;
+        }
+      }
+
+      .minus {
+        width: 3vw;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .floor-plan-img {
+    flex: 1 1 80%;
+    .box {
+      pointer-events: auto;
+    }
+    .container {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      .anchor-area {
+        position: relative;
+        width: 80%;
+        .imgBox {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .floor-points {
+    position: absolute;
+    width: 5%;
+    height: 7%;
+    .thumbBox {
+      position: relative;
+      padding: 1vw;
+      z-index: 1;
+      pointer-events: auto;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+  }
+  //B1
+  .B1_door {
+    top: 62%;
+    left: 72.5%;
+  }
+
+  //1F
+  .entry-gate {
+    left: 45.5%;
+    top: 32%;
+  }
+  .reading-room {
+    left: 59%;
+    top: 27%;
+  }
+  .kitchen {
+    left: 23.25%;
+    top: 29%;
+  }
+  .gym {
+    left: 29%;
+    top: 57%;
+  }
+  .space-1f {
+    left: 45%;
+    top: 59%;
+  }
+  .space-1f2 {
+    left: 23%;
+    top: 9%;
+  }
+
+  //3F
+  .a1-standard {
+    left: 7.5%;
+    top: 38%;
+  }
+  .a2-standard {
+    left: 36.25%;
+    top: 40%;
+  }
+  .a3-standard {
+    left: 19.5%;
+    top: 65%;
+  }
+  .b1-standard {
+    left: 81.25%;
+    top: 22%;
+  }
+  .b2-standard {
+    left: 59.25%;
+    top: 41%;
+  }
+  .b3-standard {
+    left: 75%;
+    top: 63%;
+  }
+
+  .radiation {
+    position: absolute;
+    left: 0;
+    top: 1vw;
+    right: 0;
+    margin: 0 auto;
+    width: 1.5vw;
+    height: 1.5vw;
+    z-index: 0;
+    .circle {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: rgba(229, 28, 28, 0.4862745098);
+      animation-name: radiation;
+      animation-duration: 1.35s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+    > :nth-child(2) {
+      animation-delay: 0.25s;
+    }
+    > :nth-child(3) {
+      animation-delay: 0.5s;
+    }
+  }
+
+  @keyframes radiation {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(2.5);
+    }
+  }
+}
