@@ -32,7 +32,6 @@
 </template>
 
 <script setup lang="ts">
-import "@/assets/scss/floor/floor.scss";
 interface FloorItem {
   floor: string;
   id: number;

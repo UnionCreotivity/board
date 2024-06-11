@@ -11,7 +11,6 @@
 </template>
 
 <script setup lang="ts">
-import "@/assets/scss/floor/floor.scss";
 const props = defineProps(["floor"]);
 </script>
 

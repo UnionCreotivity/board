@@ -83,19 +83,19 @@ const menuContentWidth = ref({ clipPath: "0%" });
 
 const router = useRouter();
 
-const toggleValue = (val: boolean) => {
-  emits("toggle-menu", val);
+const toggleValue = () => {
+  emits("toggle-menu");
 };
 
 //大icon返回首頁
 const backHome = () => {
   router.push("/");
-  emits("toggle-menu", false);
+  emits("toggle-menu");
 };
 
 //右上關閉按鈕
 const closeMenu = () => {
-  emits("toggle-menu", false);
+  emits("toggle-menu");
 };
 
 let timer: number | NodeJS.Timeout;

@@ -42,7 +42,6 @@
 
 <script setup lang="ts">
 import { nanoid } from "nanoid";
-import "@/assets/scss/floor/floor.scss";
 import FloorNav from "@/components/floor/FloorNav.vue";
 import FloorContent from "@/components/floor/FloorContent.vue";
 import ScaleDrag from "@/components/floor/ScaleDrag.vue";

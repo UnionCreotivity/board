@@ -30,7 +30,6 @@ import ThirdCut from "@/components/home/ThirdCut.vue";
 import FourthCUt from "@/components/home/FourthCUt.vue";
 import FifthCut from "@/components/home/FifthCut.vue";
 import SixthCut from "@/components/home/SixthCut.vue";
-import "@/assets/scss/home/home.scss";
 
 const slideStore = useSlideStore();
 

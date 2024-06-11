@@ -46,18 +46,18 @@ const trans = computed(() => {
 });
 
 const toggleValue = () => {
-  emits("toggle-menu", !props.toggle);
+  emits("toggle-menu");
 };
 
 watch(
   () => props.toggle,
   (newValue) => {
     if (newValue === true) {
-      menuColor.value = "#c3a457";
-      toggleClass.value = "";
-    } else {
       menuColor.value = "#fff";
       toggleClass.value = "menu-toggle";
+    } else {
+      menuColor.value = "#c3a457";
+      toggleClass.value = "";
     }
   }
 );

@@ -20,7 +20,7 @@ const emits = defineEmits(["link-toggle"]);
 
 const toggleMenu = () => {
   //MenuContent的emits,值會先傳到MenuContent,最終會回傳到Menu
-  emits("link-toggle", !props.toggle);
+  emits("link-toggle");
 };
 </script>
 

@@ -20,8 +20,8 @@ import MenuContent from "./MenuContent.vue";
 
 const toggle = ref(false);
 
-const showMenu = (val: boolean) => {
-  toggle.value = val;
+const showMenu = () => {
+  toggle.value = !toggle.value;
 };
 </script>
 
