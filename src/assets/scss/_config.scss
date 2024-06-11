@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
 @mixin tablet() {
-  @media all and (max-width: 1024px) {
+  @media all and (max-width: 1400px) {
     @content;
   }
 }

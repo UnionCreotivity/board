@@ -9,7 +9,11 @@
     @touchmove="onTouchMove"
     @touchend="onTouchEnd"
   >
-    <div class="box" ref="dragTarget" :style="[imgBoxStyle, boxStyle]">
+    <div
+      class="box"
+      ref="dragTarget"
+      :style="[imgBoxStyle, boxStyle, isTocuhAction]"
+    >
       <slot></slot>
     </div>
   </div>
@@ -182,8 +186,13 @@ const boxStyle = computed(() => ({
   left: `${x.value}px`,
   top: `${y.value}px`,
   transition: flag.value ? "0s" : "0.6s",
-  touchAction: "none",
 }));
+
+const isTocuhAction = computed(() => {
+  return scaleRatio.value >= 1.5
+    ? { touchAction: "none" }
+    : { touchAction: "auto" };
+});
 
 watch(scaleRatio, () => {
   scaleRatio.value = Number(scaleRatio.value);
