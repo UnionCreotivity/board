@@ -22,15 +22,15 @@
     v-if="maxRatio !== 1"
     :style="{ display: 'flex', pointerEvents: 'auto', padding: '0.6vw' }"
   >
-    <input
+    <!-- <input
       type="range"
       name="scaleImg"
       id="scaleImg"
       min="1"
-      max="2"
+      max="3"
       :step="0.01"
       v-model="scaleRatio"
-    />
+    /> -->
     <img src="../../assets/img/floor/001-plus-button.svg" @click="zoomIn" />
     <img src="../../assets/img/floor/002-minus-button.svg" @click="zoomOut" />
   </div>
@@ -63,8 +63,10 @@ const imgBox = ref<HTMLElement | null>(null);
 const zoomIn = (e: MouseEvent) => {
   e.stopPropagation();
   e.preventDefault();
+  console.log(scaleRatio.value);
+  console.log(props.maxRatio);
   if (scaleRatio.value < props.maxRatio) {
-    scaleRatio.value += 0.5;
+    scaleRatio.value += 1;
     // scaleRatio.value = Math.min(scaleRatio.value + 0.1, props.maxRatio);
   }
 };
@@ -73,9 +75,9 @@ const zoomOut = (e: MouseEvent) => {
   e.stopPropagation();
   e.preventDefault();
   if (scaleRatio.value > 1) {
-    scaleRatio.value -= 0.5;
+    scaleRatio.value -= 1;
   }
-  if (scaleRatio.value < 1.5) {
+  if (scaleRatio.value < 3) {
     x.value = 0;
     y.value = 0;
   }
@@ -84,7 +86,7 @@ const zoomOut = (e: MouseEvent) => {
 const onMouseMove = (e: MouseEvent) => {
   const maxHorizontal = (mapRect.width - boxRect.width) / 2;
   const maxVertical = (mapRect.height - boxRect.height) / 2;
-  if (flag.value && scaleRatio.value >= 1.5) {
+  if (flag.value && scaleRatio.value >= 3) {
     requestAnimationFrame(() => {
       if (Math.abs(deltaXY.x) > Math.abs(deltaXY.y)) {
         if (deltaXY.x > 0 && x.value <= maxHorizontal) {
@@ -142,7 +144,7 @@ const onTouchMove = (e: TouchEvent) => {
   const maxHorizontal = (mapRect.width - boxRect.width) / 2;
   const maxVertical = (mapRect.height - boxRect.height) / 2;
 
-  if (flag.value && scaleRatio.value >= 1.5) {
+  if (flag.value && scaleRatio.value >= 3) {
     requestAnimationFrame(() => {
       if (Math.abs(deltaXY.x) > Math.abs(deltaXY.y)) {
         if (deltaXY.x > 0 && x.value <= maxHorizontal) {
@@ -189,16 +191,16 @@ const boxStyle = computed(() => ({
 }));
 
 const isTocuhAction = computed(() => {
-  return scaleRatio.value >= 1.5
+  return scaleRatio.value >= 2
     ? { touchAction: "none" }
     : { touchAction: "auto" };
 });
 
 watch(scaleRatio, () => {
   scaleRatio.value = Number(scaleRatio.value);
-  if (scaleRatio.value >= 2) {
-    scaleRatio.value = 2;
-  } else if (scaleRatio.value < 1.5) {
+  if (scaleRatio.value >= 3) {
+    scaleRatio.value = 3;
+  } else if (scaleRatio.value < 2) {
     x.value = 0;
     y.value = 0;
   } else if (scaleRatio.value <= 1) {

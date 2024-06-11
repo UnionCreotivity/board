@@ -4,7 +4,7 @@
     <div class="floor-main">
       <FloorNav @select-floor="setFloor" @move="setMove" :floor="floor" />
       <div class="floor-plan-img">
-        <ScaleDrag :maxRatio="2" :init="{ x: 100, y: 100 }">
+        <ScaleDrag :maxRatio="3" :init="{ x: 100, y: 100 }">
           <FadeInItem>
             <div
               class="container"

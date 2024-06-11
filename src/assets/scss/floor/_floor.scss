@@ -148,6 +148,22 @@
         }
       }
     }
+    @include tablet {
+      display: flex;
+      height: 80vh;
+      > .imgBox {
+        width: 94%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .zoom {
+        right: 5%;
+        bottom: 20%;
+        position: absolute;
+        flex-direction: column-reverse;
+      }
+    }
   }
 
   .floor-points {
