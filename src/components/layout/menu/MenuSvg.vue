@@ -51,7 +51,7 @@ const toggleValue = () => {
 
 watch(
   () => props.toggle,
-  (oldValue, newValue) => {
+  (newValue) => {
     if (newValue === true) {
       menuColor.value = "#c3a457";
       toggleClass.value = "";

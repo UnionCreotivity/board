@@ -11,7 +11,7 @@
       </div>
       <ul>
         <li
-          v-for="(item, index) in state.data"
+          v-for="item in state.data"
           :key="item.floor"
           :class="{ selected: selectedIndex === item.floor }"
           @click="selectFloor(item.floor)"

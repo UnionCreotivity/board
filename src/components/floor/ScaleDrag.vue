@@ -38,11 +38,6 @@ interface InitPosition {
   y: number;
 }
 
-interface Rect {
-  width: number;
-  height: number;
-}
-
 const props = defineProps<{
   maxRatio: number;
   init: InitPosition;

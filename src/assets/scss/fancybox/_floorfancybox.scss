@@ -109,4 +109,38 @@
       margin-top: 1.5vw;
     }
   }
+
+  //SVG
+  #floor_Standard {
+    .cls-1,
+    .cls-2,
+    .cls-3 {
+      fill: none;
+      stroke: #306374;
+      stroke-width: 7px;
+      stroke-miterlimit: 10;
+      user-select: none;
+    }
+
+    .cls-4 {
+      font-size: 147.67px;
+    }
+
+    .svg-text-default-color {
+      fill: #306374;
+    }
+    .svg-text-choose-color {
+      fill: #fff;
+    }
+
+    .svg-rect-default-color {
+      fill: #fff;
+    }
+    .svg-rect-choose-color {
+      fill: #306374;
+    }
+    text {
+      user-select: none;
+    }
+  }
 }

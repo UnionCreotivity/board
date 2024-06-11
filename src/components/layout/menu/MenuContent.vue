@@ -59,10 +59,18 @@ const linkItem = ref([
   },
   {
     id: nanoid(),
-    name: "NEWS",
+    name: "CALC",
     content: [
-      { path: "/news", pathName: "NEWS1" },
-      { path: "/news", pathName: "NEWS2" },
+      { path: "/calc", pathName: "CALC1" },
+      { path: "/calc", pathName: "CALC2" },
+    ],
+  },
+  {
+    id: nanoid(),
+    name: "FLOORS",
+    content: [
+      { path: "/floor", pathName: "FLOORS1" },
+      { path: "/floor", pathName: "FLOORS2" },
     ],
   },
 ]);
@@ -93,7 +101,7 @@ const closeMenu = () => {
 let timer: number | NodeJS.Timeout;
 watch(
   () => props.toggle,
-  (newValue, oldValue) => {
+  (newValue) => {
     if (timer) {
       clearTimeout(timer);
     }

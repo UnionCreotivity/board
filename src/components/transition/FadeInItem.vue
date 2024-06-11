@@ -1,5 +1,5 @@
 <template>
-  <TransitionGroup name="fade-item">
+  <TransitionGroup name="fade-item" mode="out-in">
     <slot></slot>
   </TransitionGroup>
 </template>

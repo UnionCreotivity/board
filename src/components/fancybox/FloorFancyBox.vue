@@ -18,11 +18,14 @@
         <h4>家具配置圖</h4>
         <div class="s_line"></div>
       </div>
+      <FloorSVG :tagName="tagName" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import FloorSVG from "../floor/FloorSVG.vue";
+
 const props = defineProps(["boxContent"]);
 
 const emits = defineEmits(["toggle-box"]);
