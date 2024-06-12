@@ -7,8 +7,11 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    BuildingChoose: typeof import('./src/components/buildings/BuildingChoose.vue')['default']
+    BuildingNav: typeof import('./src/components/buildings/BuildingNav.vue')['default']
     CalculatorForm: typeof import('./src/components/calculator/CalculatorForm.vue')['default']
     CalculatorResult: typeof import('./src/components/calculator/CalculatorResult.vue')['default']
+    ChooseBuilding: typeof import('./src/components/buildings/ChooseBuilding.vue')['default']
     FadeIn: typeof import('./src/components/transition/FadeIn.vue')['default']
     FadeInItem: typeof import('./src/components/transition/FadeInItem.vue')['default']
     FifthCut: typeof import('./src/components/home/FifthCut.vue')['default']

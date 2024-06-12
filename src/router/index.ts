@@ -9,6 +9,7 @@ import DesignPage from "@/views/design/DesignPage.vue";
 import FloorPage from "@/views/floor/FloorPage.vue";
 import LifeFunctionPage from "@/views/lifefunction/LifeFunctionPage.vue";
 import CalculatorPage from "@/views/calculator/CalculatorPage.vue";
+import BuildingsPage from "@/views/buildings/BuildingsPage.vue";
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -48,6 +49,10 @@ const router = createRouter({
     {
       path: "/calc",
       component: CalculatorPage,
+    },
+    {
+      path: "/building",
+      component: BuildingsPage,
     },
   ],
 });
