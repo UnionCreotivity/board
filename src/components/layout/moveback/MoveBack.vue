@@ -12,7 +12,7 @@ const route = useRoute();
 const router = useRouter();
 
 //選定特定路徑
-const innerPage = ["/floor"];
+const innerPage = ["/floor", "/floor3d"];
 
 const moveBackClick = () => {
   //符合就回上一頁 不符合就回首頁
