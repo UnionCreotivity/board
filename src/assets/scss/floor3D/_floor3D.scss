@@ -9,14 +9,18 @@
   pointer-events: none;
   z-index: 21;
   .floor3D-main {
+    position: relative;
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    width: 90%;
-    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
   }
   .floor3D-nav {
-    flex: 1 1 0%;
+    position: absolute;
+    left: 15vw;
+    top: 0;
+    width: 16vw;
     height: 100%;
     display: flex;
     align-items: center;
@@ -24,7 +28,7 @@
     .floor3D-nav-container {
       display: flex;
       flex-direction: column;
-      font-size: 1.2vw;
+      font-size: 24px;
       color: #1a1a1a;
       font-weight: 700;
       width: 100%;
@@ -45,7 +49,7 @@
 
       ul {
         list-style-type: none;
-        height: 31vh;
+        height: 65vh;
         overflow-y: scroll;
         display: flex;
         align-items: center;
@@ -55,9 +59,12 @@
         }
         li {
           text-align: center;
-          margin-bottom: 1.5vw;
+          margin-bottom: 30px;
           line-height: 2;
           cursor: pointer;
+          width: 100%;
+          transition: all 0.5s;
+          background-color: transparent;
         }
         transition: all 0.5s;
         .selected {
@@ -65,9 +72,47 @@
           transition: all 0.5s;
         }
       }
+      @media screen and (max-width: 1440px) {
+        font-size: 18px;
+      }
     }
   }
   .floor3D-building {
-    flex: 1 1 40%;
+    position: relative;
+    height: 90%;
+    canvas {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+    @media (max-aspect-ratio: 4/3) {
+      canvas {
+        display: none;
+      }
+    }
+    img {
+      height: 100%;
+      width: auto;
+    }
+    .building-svg {
+      position: absolute;
+      height: 97.8%;
+      top: 2%;
+    }
+    .building-a {
+      left: 14.75%;
+      height: 97%;
+      top: 3%;
+    }
+    .building-c {
+      left: 9%;
+    }
+  }
+  .titleBox {
+    position: absolute;
+    font-size: 50px;
+    left: 70%;
   }
 }

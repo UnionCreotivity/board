@@ -149,7 +149,7 @@ export const floor3D_Data = [
       },
       {
         floor: "1F夾層",
-        type: "1F-inner",
+        type: "1F夾層",
       },
       {
         floor: "2F",
@@ -274,7 +274,7 @@ export const floor3D_Data = [
       },
       {
         floor: "1F夾層",
-        type: "1F-inner",
+        type: "1F夾層",
       },
       {
         floor: "2F",
@@ -388,21 +388,21 @@ export const floor3D_Building_Data = [
   {
     building: "A",
     image: new URL(
-      "@/assets/img/floor3D/building/a-building.svg",
+      "@/assets/img/floor3D/building/009-a-building.svg",
       import.meta.url
     ).href,
   },
   {
     building: "B",
     image: new URL(
-      "@/assets/img/floor3D/building/a-building.svg",
+      "@/assets/img/floor3D/building/009-a-building.svg",
       import.meta.url
     ).href,
   },
   {
     building: "C",
     image: new URL(
-      "@/assets/img/floor3D/building/c-building.svg",
+      "@/assets/img/floor3D/building/004-c-building.svg",
       import.meta.url
     ).href,
   },

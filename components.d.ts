@@ -7,8 +7,12 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    BuildingA: typeof import('./src/components/floor3D/data/BuildingA.vue')['default']
+    BuildingB: typeof import('./src/components/floor3D/data/BuildingB.vue')['default']
+    BuildingC: typeof import('./src/components/floor3D/data/BuildingC.vue')['default']
     BuildingChoose: typeof import('./src/components/buildings/BuildingChoose.vue')['default']
     BuildingNav: typeof import('./src/components/buildings/BuildingNav.vue')['default']
+    BuildingSVGCollection: typeof import('./src/components/floor3D/data/BuildingSVGCollection.vue')['default']
     CalculatorForm: typeof import('./src/components/calculator/CalculatorForm.vue')['default']
     CalculatorResult: typeof import('./src/components/calculator/CalculatorResult.vue')['default']
     ChooseBuilding: typeof import('./src/components/buildings/ChooseBuilding.vue')['default']
@@ -17,7 +21,9 @@ declare module 'vue' {
     FifthCut: typeof import('./src/components/home/FifthCut.vue')['default']
     FirstCut: typeof import('./src/components/home/FirstCut.vue')['default']
     Floor3D: typeof import('./src/components/floor3D/Floor3D.vue')['default']
+    Floor3D_Line: typeof import('./src/components/floor3D/Floor3D_Line.vue')['default']
     Floor3DBuilding: typeof import('./src/components/floor3D/Floor3DBuilding.vue')['default']
+    Floor3DLine: typeof import('./src/components/floor3D/Floor3DLine.vue')['default']
     Floor3DNav: typeof import('./src/components/floor3D/Floor3DNav.vue')['default']
     FloorContent: typeof import('./src/components/floor/FloorContent.vue')['default']
     FloorFancyBox: typeof import('./src/components/fancybox/FloorFancyBox.vue')['default']

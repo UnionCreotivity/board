@@ -5,7 +5,7 @@
         class="prev-arrow-box arrow-box"
         @mousedown.prevent="handleToTop"
         @mouseup.prevent="handleStop"
-        @touchstart="handleToBottom"
+        @touchstart="handleToTop"
         @touchend="handleStop"
       >
         <img
@@ -15,7 +15,18 @@
       </div>
 
       <ul ref="floor3DNav">
-        <li v-for="item in floorData" :key="nanoid()">{{ item.floor }}</li>
+        <li
+          v-for="item in floorData"
+          :key="nanoid()"
+          @click="handleFloor(item.type)"
+          :style="
+            props.mainType == item.type
+              ? 'background-color:rgba(194,164,87,0.45)'
+              : ''
+          "
+        >
+          {{ item.floor }}
+        </li>
       </ul>
 
       <div
@@ -43,6 +54,10 @@ interface Floor3DItem {
 import { nanoid } from "nanoid";
 import { floor3D_Data } from "./data/Floor3D-Data";
 
+const props = defineProps(["mainType"]);
+
+const emits = defineEmits(["handel-main-type"]);
+
 let floorData = ref<Floor3DItem[]>([]);
 
 const floor3DNav = ref<HTMLElement | null>(null);
@@ -67,7 +82,6 @@ const handleToTop = () => {
     if (!scrollState.value) return;
     currentScrollTop -= 15;
     floor3DNav.value.scrollTop = currentScrollTop;
-
     if (floor3DNav.value.scrollTop > mainHeight * -1) {
       requestAnimationFrame(animate);
     }
@@ -91,7 +105,7 @@ const handleToBottom = () => {
     if (!floor3DNav.value) return;
     currentScrollTop += 15;
     floor3DNav.value.scrollTop = currentScrollTop;
-
+    console.log(floor3DNav.value.scrollTop);
     if (currentScrollTop < 0) {
       requestAnimationFrame(animate);
     }
@@ -103,6 +117,10 @@ const handleStop = () => {
   scrollState.value = false;
 };
 
+const handleFloor = (floor: string) => {
+  emits("handel-main-type", floor);
+};
+
 onMounted(() => {
   const query = route.query;
   const buildingName = query.building;
@@ -112,6 +130,7 @@ onMounted(() => {
   );
 
   floorData.value = filterBuilding[0].content;
+  console.log(floorData.value[0].type);
 });
 </script>
 
