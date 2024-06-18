@@ -273,8 +273,6 @@
 
 <script setup lang="ts">
 const props = defineProps(["buildingTag", "mainType"]);
-
-const buildingTag = ref("");
 </script>
 
 <style scoped></style>

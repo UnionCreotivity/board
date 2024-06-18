@@ -95,10 +95,6 @@ const handleToBottom = () => {
 
   if (!floor3DNav.value) return;
   let currentScrollTop = floor3DNav.value.scrollTop;
-  let scrollHeight = floor3DNav.value.scrollHeight;
-  let clientHeight = floor3DNav.value.clientHeight;
-
-  let mainHeight = scrollHeight - clientHeight;
 
   const animate = () => {
     if (!scrollState.value) return;
