@@ -23,6 +23,7 @@ const handleMainType = (type: string) => {
 };
 
 onMounted(() => {
+  //透過網址的參數來決定要渲染哪棟房子
   const query = route.query;
   buildingName.value = query.building as string;
 });

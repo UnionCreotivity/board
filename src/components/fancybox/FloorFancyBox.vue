@@ -33,6 +33,7 @@ const emits = defineEmits(["toggle-box"]);
 const tagName = ref(props.boxContent?.className);
 
 const right = computed(() => {
+  //判斷要渲染公共設施還是格局圖
   return props.boxContent?.type === "public" ? "" : "floor-fancybox-right";
 });
 

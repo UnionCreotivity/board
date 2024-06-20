@@ -71,9 +71,11 @@ const calFormVal = ref({
 });
 
 const handleSubmit = () => {
+  //丟去pinia計算
   store.loanCalc(calFormVal.value);
 };
 const clearForm = () => {
+  //清空輸入的值
   calFormVal.value.year = 0;
   calFormVal.value.total = 0;
   calFormVal.value.interestRatio = 0;
@@ -83,6 +85,7 @@ const clearForm = () => {
 watch(
   calFormVal,
   () => {
+    //計算機數值監控
     if (calFormVal.value.year > 99) {
       calFormVal.value.year = 99;
     }

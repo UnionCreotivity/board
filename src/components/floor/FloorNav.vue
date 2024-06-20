@@ -59,11 +59,13 @@ const floorLength = state.data.length;
 const selectedIndex = ref<string | null>("1F");
 
 const selectFloor = (index: string) => {
+  //選擇樓層
   selectedIndex.value = index;
   emits("select-floor", index);
 };
 
 const move = (step: number) => {
+  //上下箭頭的輪播
   pos.value = (pos.value + step + floorLength) % floorLength;
   emits("move", pos.value);
 };
@@ -71,6 +73,7 @@ const move = (step: number) => {
 watch(
   () => props.floor,
   (newValue) => {
+    //監控且更新當前樓層數
     selectedIndex.value = newValue;
     const findId = state.data.filter((item) => item.floor === props.floor);
     pos.value = findId[0].id;

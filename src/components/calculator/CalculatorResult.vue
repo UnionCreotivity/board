@@ -106,6 +106,7 @@ const {
 const isAllowance = ref(false);
 
 watch(allowancePeriodCost, () => {
+  //把","去除掉，並且轉換成數字型態
   if (Number(allowancePeriodCost.value.replace(",", "")) > 0) {
     isAllowance.value = true;
   } else {

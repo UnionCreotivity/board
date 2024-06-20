@@ -15,6 +15,7 @@
 </template>
 
 <script setup lang="ts">
+//紅色點點
 const props = defineProps(["className", "image", "imageName", "type"]);
 
 const emits = defineEmits(["toggle-box"]);

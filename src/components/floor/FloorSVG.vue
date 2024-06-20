@@ -141,6 +141,7 @@
 </template>
 
 <script setup lang="ts">
+//樓層格局圖
 const props = defineProps(["tagName"]);
 
 const setTagName = computed(() => {

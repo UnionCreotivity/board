@@ -3,6 +3,7 @@
 </template>
 
 <script setup lang="ts">
+//canvas測試用
 const canvasRef = ref<HTMLCanvasElement | null>(null);
 
 onMounted(() => {

@@ -15,6 +15,7 @@
 </template>
 
 <script setup lang="ts">
+//房子分布圖
 import { nanoid } from "nanoid";
 
 const emits = defineEmits(["select-building"]);
@@ -59,6 +60,7 @@ const buildingNavItem = reactive([
 const buildIngLength = buildingNavItem.length;
 
 const move = (step: number, trans: string) => {
+  //輪播
   let showIndex = (props.nowBuilding + step + buildIngLength) % buildIngLength;
   emits("select-building", showIndex, trans);
 };

@@ -14,6 +14,7 @@ const toMoneyStyle = (num: number) => {
   });
 };
 
+//房貸試算
 export const useCalculator = defineStore("calculator", {
   state: () => {
     return {

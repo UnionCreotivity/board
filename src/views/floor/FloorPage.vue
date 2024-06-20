@@ -30,6 +30,7 @@
     </div>
 
     <Teleport to="body">
+      <!-- 彈跳頁面 -->
       <FadeIn
         ><FloorFancyBox
           v-if="showbox"
@@ -60,15 +61,18 @@ const showbox = ref(false);
 const boxContent = ref({});
 
 const setFloor = (val: string) => {
+  //選擇樓層
   floor.value = val;
 };
 
 const setMove = (val: number) => {
+  //上下箭頭的輪播
   const filterId = floorImg.filter((item) => item.floorId === val);
   floor.value = filterId[0].name;
 };
 
 const toggleBox = (val?: {}) => {
+  //判斷是否需要跳出fancybox
   if (val) {
     boxContent.value = val;
   } else {

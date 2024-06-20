@@ -82,6 +82,7 @@ const handleToTop = () => {
     if (!scrollState.value) return;
     currentScrollTop -= 15;
     floor3DNav.value.scrollTop = currentScrollTop;
+    //超過臨界點停止
     if (floor3DNav.value.scrollTop > mainHeight * -1) {
       requestAnimationFrame(animate);
     }
@@ -101,7 +102,7 @@ const handleToBottom = () => {
     if (!floor3DNav.value) return;
     currentScrollTop += 15;
     floor3DNav.value.scrollTop = currentScrollTop;
-    console.log(floor3DNav.value.scrollTop);
+    //超過臨界點停止
     if (currentScrollTop < 0) {
       requestAnimationFrame(animate);
     }
@@ -114,10 +115,12 @@ const handleStop = () => {
 };
 
 const handleFloor = (floor: string) => {
+  //選擇樓層
   emits("handel-main-type", floor);
 };
 
 onMounted(() => {
+  //透過網址的參數來決定要渲染哪棟房子
   const query = route.query;
   const buildingName = query.building;
 
@@ -126,7 +129,6 @@ onMounted(() => {
   );
 
   floorData.value = filterBuilding[0].content;
-  console.log(floorData.value[0].type);
 });
 </script>
 

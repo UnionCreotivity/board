@@ -88,6 +88,7 @@ const onMouseMove = (e: MouseEvent) => {
   const maxVertical = (mapRect.height - boxRect.height) / 2;
   if (flag.value && scaleRatio.value >= 3) {
     requestAnimationFrame(() => {
+      //限制可拖動範圍
       if (Math.abs(deltaXY.x) > Math.abs(deltaXY.y)) {
         if (deltaXY.x > 0 && x.value <= maxHorizontal) {
           x.value = e.pageX - press.x;
@@ -113,6 +114,7 @@ const onMouseMove = (e: MouseEvent) => {
 
 const onMouseDown = (e: MouseEvent) => {
   e.preventDefault();
+  //設定初始值
   flag.value = true;
   press.x = e.pageX - (dragTarget.value?.offsetLeft ?? 0);
   press.y = e.pageY - (dragTarget.value?.offsetTop ?? 0);

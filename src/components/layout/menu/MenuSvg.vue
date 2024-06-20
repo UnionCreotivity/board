@@ -38,10 +38,12 @@ const toggleClass = ref("");
 const menuColor = ref("#c3a457");
 
 const getMousePos = (val: MouseEvent) => {
+  //取得滑鼠位置
   mousePos.value.y = val.clientY;
 };
 
 const trans = computed(() => {
+  //更新旁邊svg的位置
   return { [cssLocalVar.value]: mousePos.value.y + "px" };
 });
 

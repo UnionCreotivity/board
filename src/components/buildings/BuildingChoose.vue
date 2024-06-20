@@ -9,11 +9,13 @@
       >
         <img :src="item.buildingImg" :alt="item.alt" />
         <div class="building-choose-img-left">
+          <!-- 房子左 -->
           <RouterLink
             :to="{ path: '/floor3d', query: { building: item.build1 } }"
           ></RouterLink>
         </div>
         <div class="building-choose-img-right">
+          <!-- 房子右 -->
           <RouterLink
             :to="{ path: '/floor3d', query: { building: item.build2 } }"
           ></RouterLink>
@@ -71,6 +73,7 @@ const buildData = reactive([
 </script>
 
 <style lang="scss">
+//房子css動畫
 .prev-img-enter-active,
 .prev-img-leave-active {
   transition: opacity 0.6s, transform 0.8s;

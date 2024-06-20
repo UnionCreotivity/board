@@ -22,6 +22,7 @@ let floor3D_Src = ref("");
 let floor3D_tag = ref("");
 
 onMounted(() => {
+  //透過網址的參數來決定要渲染哪棟房子
   const query = route.query;
   const buildingName = query.building;
 
