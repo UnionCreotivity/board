@@ -73,6 +73,14 @@ const linkItem = ref([
       { path: "/floor", pathName: "FLOORS2" },
     ],
   },
+  {
+    id: nanoid(),
+    name: "BUILDING",
+    content: [
+      { path: "/building", pathName: "Building" },
+      { path: "/building", pathName: "Building" },
+    ],
+  },
 ]);
 
 const props = defineProps(["toggle"]);

@@ -1,7 +1,7 @@
 <template>
   <article class="home-cut home-cut-3">
     <h1 style="color: white; text-align: center">我是slide-2</h1>
-    <div class="svg-test">
+    <!-- <div class="svg-test">
       <span class="svg-test-R" style="color: white"
         >R
 
@@ -48,7 +48,7 @@
           d="M81.775 176.026l49.874 89.5"
         ></path>
       </symbol>
-    </svg>
+    </svg> -->
   </article>
 </template>
 

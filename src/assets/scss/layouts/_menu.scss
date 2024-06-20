@@ -180,6 +180,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    flex-wrap: wrap;
     a {
       color: white;
       text-decoration: none;
@@ -190,12 +191,12 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 13%;
-    margin: auto;
+    width: 25%;
+    margin: 1% auto;
   }
   .menu-contain-col-title {
     font-size: 3vw;
-    margin-bottom: 15%;
+    margin-bottom: 5%;
   }
   .menu-contain-col-link {
     margin-bottom: 10%;
