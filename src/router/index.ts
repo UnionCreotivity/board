@@ -11,6 +11,7 @@ import LifeFunctionPage from "@/views/lifefunction/LifeFunctionPage.vue";
 import CalculatorPage from "@/views/calculator/CalculatorPage.vue";
 import BuildingsPage from "@/views/buildings/BuildingsPage.vue";
 import Floor3dPage from "@/views/3D-Floor/Floor3dPage.vue";
+import TestPage from "@/views/Test/TestPage.vue";
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -58,6 +59,10 @@ const router = createRouter({
     {
       path: "/floor3d",
       component: Floor3dPage,
+    },
+    {
+      path: "/test",
+      component: TestPage,
     },
   ],
 });

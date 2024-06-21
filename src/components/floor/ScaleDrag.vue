@@ -63,8 +63,6 @@ const imgBox = ref<HTMLElement | null>(null);
 const zoomIn = (e: MouseEvent) => {
   e.stopPropagation();
   e.preventDefault();
-  console.log(scaleRatio.value);
-  console.log(props.maxRatio);
   if (scaleRatio.value < props.maxRatio) {
     scaleRatio.value += 1;
     // scaleRatio.value = Math.min(scaleRatio.value + 0.1, props.maxRatio);

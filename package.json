@@ -12,6 +12,7 @@
   "dependencies": {
     "@types/is-url": "^1.2.32",
     "@types/node": "^20.12.12",
+    "@types/vue-color": "^2.4.8",
     "axios": "^1.7.2",
     "gh-pages": "^6.1.1",
     "gsap": "^3.12.5",
@@ -22,6 +23,8 @@
     "url": "^0.11.3",
     "vite-plugin-eslint": "^1.8.1",
     "vue": "^3.4.21",
+    "vue-color": "^2.8.1",
+    "vue-color-kit": "^1.0.6",
     "vue-router": "^4.3.2"
   },
   "devDependencies": {
