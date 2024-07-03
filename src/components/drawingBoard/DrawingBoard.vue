@@ -1,7 +1,13 @@
 <template>
   <div class="draw-board-box">
     <div class="draw-board-box-container" v-show="store.drawingToggle">
-      <canvas ref="canvasRef" @mousedown="mouseDownFc" @mouseup="mouseUpFc" />
+      <canvas
+        ref="canvasRef"
+        @mousedown="mouseDownFc"
+        @mouseup="mouseUpFc"
+        @touchstart="mouseDownFc"
+        @touchend="mouseUpFc"
+      />
       <div class="draw-board-toolbox">
         <div class="draw-board-toolbox-brush">
           <div
@@ -70,7 +76,6 @@
 </template>
 
 <script setup lang="ts">
-import { storeToRefs } from "pinia";
 import { useDrawingStore } from "@/stores/drawingState";
 
 const canvasRef = ref<HTMLCanvasElement | null>(null);
@@ -81,6 +86,10 @@ const store = useDrawingStore();
 //上一個滑鼠位置
 const mX = ref();
 const mY = ref();
+
+//現在滑鼠位置
+const nX = ref();
+const nY = ref();
 
 //畫面縮放造成的偏移量
 const scaleX = ref();
@@ -99,7 +108,7 @@ const brushWidth = ref(7);
 const drawingToggle = ref(false);
 
 //滑鼠按下
-const mouseDownFc = (e: MouseEvent) => {
+const mouseDownFc = (e: MouseEvent | TouchEvent) => {
   mouseDown.value = true;
   if (!mouseDown.value) return;
   getMousePosition(e);
@@ -122,18 +131,32 @@ const setColor = (val: string) => {
 };
 
 //設定滑鼠位置
-const getMousePosition = (e: MouseEvent) => {
+const getMousePosition = (e: MouseEvent | TouchEvent) => {
   if (!mouseDown.value || !canvasRef.value) return;
+  if (e instanceof MouseEvent) {
+    nX.value = e.clientX;
+    nY.value = e.clientY;
+  } else if (e instanceof TouchEvent) {
+    nX.value = e.touches[0].clientX;
+    nY.value = e.touches[0].clientY;
+  }
   let canvasPosition = canvasRef.value?.getBoundingClientRect();
   scaleX.value = canvasRef.value.width / canvasPosition?.width;
   scaleY.value = canvasRef.value.height / canvasPosition?.height;
-  mX.value = e.clientX * scaleX.value;
-  mY.value = e.clientY * scaleY.value;
+  mX.value = nX.value * scaleX.value;
+  mY.value = nY.value * scaleY.value;
 };
 
 //繪製
-const draw = (e: MouseEvent) => {
+const draw = (e: MouseEvent | TouchEvent) => {
   if (!ctx.value) return;
+  if (e instanceof MouseEvent) {
+    nX.value = e.clientX;
+    nY.value = e.clientY;
+  } else if (e instanceof TouchEvent) {
+    nX.value = e.touches[0].clientX;
+    nY.value = e.touches[0].clientY;
+  }
   ctx.value.save();
   ctx.value.beginPath();
   ctx.value.strokeStyle = color.value;
@@ -141,7 +164,7 @@ const draw = (e: MouseEvent) => {
   ctx.value.lineJoin = "round";
   ctx.value.lineWidth = brushWidth.value;
   ctx.value.moveTo(mX.value, mY.value);
-  ctx.value.lineTo(e.clientX * scaleX.value, e.clientY * scaleY.value);
+  ctx.value.lineTo(nX.value * scaleX.value, nY.value * scaleY.value);
   ctx.value.stroke();
   ctx.value.restore();
 };
@@ -175,11 +198,11 @@ onMounted(() => {
       draw(e);
       getMousePosition(e);
     });
-    // window.addEventListener("touchmove", function (e) {
-    //   if (!mouseDown.value) return;
-    //   draw(e);
-    //   getMousePosition(e);
-    // });
+    window.addEventListener("touchmove", function (e) {
+      if (!mouseDown.value) return;
+      draw(e);
+      getMousePosition(e);
+    });
   }
 });
 
