@@ -104,9 +104,6 @@ const color = ref("#000000");
 //筆觸粗度
 const brushWidth = ref(7);
 
-//畫布顯示
-const drawingToggle = ref(false);
-
 //滑鼠按下
 const mouseDownFc = (e: MouseEvent | TouchEvent) => {
   mouseDown.value = true;
