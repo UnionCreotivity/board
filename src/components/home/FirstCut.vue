@@ -5,19 +5,11 @@
         src="../../assets/img/home/pexels-andrea-piacquadio-974911-(1).jpg"
         alt=""
       />
-      <div class="home-cut-1-abs">
-        <!-- <ColorPicker :color="color" /> -->
-      </div>
+      <div class="home-cut-1-abs"></div>
     </div>
   </article>
 </template>
 
-<script setup lang="ts">
-import { ref } from "vue";
-import { ColorPicker } from "vue-color-kit";
-import "vue-color-kit/dist/vue-color-kit.css";
-
-const color = ref();
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped></style>

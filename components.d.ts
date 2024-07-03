@@ -7,9 +7,6 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    BuildingA: typeof import('./src/components/floor3D/data/BuildingA.vue')['default']
-    BuildingB: typeof import('./src/components/floor3D/data/BuildingB.vue')['default']
-    BuildingC: typeof import('./src/components/floor3D/data/BuildingC.vue')['default']
     BuildingChoose: typeof import('./src/components/buildings/BuildingChoose.vue')['default']
     BuildingNav: typeof import('./src/components/buildings/BuildingNav.vue')['default']
     BuildingSVGCollection: typeof import('./src/components/floor3D/data/BuildingSVGCollection.vue')['default']
@@ -25,7 +22,6 @@ declare module 'vue' {
     Floor3DLine: typeof import('./src/components/floor3D/Floor3DLine.vue')['default']
     Floor3DNav: typeof import('./src/components/floor3D/Floor3DNav.vue')['default']
     FloorContent: typeof import('./src/components/floor/FloorContent.vue')['default']
-    FloorDraw: typeof import('./src/components/floor/FloorDraw.vue')['default']
     FloorFancyBox: typeof import('./src/components/fancybox/FloorFancyBox.vue')['default']
     FloorNav: typeof import('./src/components/floor/FloorNav.vue')['default']
     FloorPoints: typeof import('./src/components/floor/FloorPoints.vue')['default']
